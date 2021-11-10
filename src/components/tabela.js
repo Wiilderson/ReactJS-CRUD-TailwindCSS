@@ -1,15 +1,20 @@
-import { render } from "@testing-library/react";
-import React from "react"
+import React from "react";
+
 import api from "../baseAPI/API";
 import BotaoTelaCadastro from "./botaoTelaCadastro";
+import BotaoAcoes from "./botaoAcoes";
+
 
 class ExibindoTabela extends React.Component {
+
 
   state = {
     pessoas: []
   }
 
+
   async componentDidMount() {
+
     const response = await api.get('/users')
     this.setState({
       pessoas: response.data
@@ -20,6 +25,8 @@ class ExibindoTabela extends React.Component {
 
   render() {
     const teste = this.state
+
+
     return (
       <div >
         <BotaoTelaCadastro />
@@ -50,8 +57,8 @@ class ExibindoTabela extends React.Component {
               >
                 Status
               </th>
-              <th scope="col" className="relative px-6 py-3">
-                <span className="sr-only">Edit</span>
+              <th scope="col" className="relative px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Ações
               </th>
             </tr>
           </thead>
@@ -73,7 +80,7 @@ class ExibindoTabela extends React.Component {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-500">{props.email}</div>
                   {/* <div className="text-sm text-gray-900">{props.title}</div> */}
-                  <div className="text-sm text-gray-500">{props.department}</div>
+                  {/* <div className="text-sm text-gray-500">{props.department}</div> */}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{props.role}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -82,7 +89,7 @@ class ExibindoTabela extends React.Component {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-
+                  <BotaoAcoes />
                 </td>
               </tr>
             ))}
@@ -90,6 +97,7 @@ class ExibindoTabela extends React.Component {
         </table>
       </div >
     )
+
   }
 }
 // }

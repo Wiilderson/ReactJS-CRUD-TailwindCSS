@@ -1,7 +1,6 @@
-import axios from "axios";
 import React, { useState } from "react"
 import { useHistory } from "react-router"
-
+import API from "../baseAPI/API"
 
 export default function CadastroUser() {
     let history = useHistory()
@@ -9,26 +8,26 @@ export default function CadastroUser() {
     const [user, setUser] = useState({
         name: "",
         email: "",
-        role: "",
-        title: "",
-        department: ""
+        role: ""
     });
 
-    const { name, role, email, title, department } = user;
+    const { name, role, email } = user;
 
     const onValueChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
         // console.log(user);
     }
 
-    const addUser = async () => {
-        await axios.post('/users', user)
-        history.push('/');
+    const addUser = async e => {
+        e.preventDefault()
+        await API.post('/users', user)
+        history.push('/')
+
     }
     return (
 
         <div className="mt-5 md:mt-0 md:col-span-2">
-            <form method="POST">
+            <form method="POST" onSubmit={e => addUser(e)}>
                 <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-gray-50 sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
@@ -70,72 +69,15 @@ export default function CadastroUser() {
                                 />
                             </div>
 
-                            {/* <div className="col-span-6 sm:col-span-3">
-                                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                                    Country / Region
-                                </label>
-                                <select
-                                    id="country"
-                                    name="country"
-                                    autoComplete="country"
-                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                >
-                                    <option>United States</option>
-                                    <option>Canada</option>
-                                    <option>Mexico</option>
-                                </select>
-                            </div> */}
-
-                            <div className="col-span-6">
-                                <label htmlFor="street-address" className="block text-sm font-medium text-gray-700">
-                                    Departamento
-                                </label>
-                                <input
-                                    onChange={(e) => onValueChange(e)} value={department}
-                                    type="text"
-                                    name="department"
-                                    id="street-address"
-                                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                />
-                            </div>
-
-                            <div className="col-span-6 sm:col-span-4">
-                                <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                                    Formação
-                                </label>
-                                <input
-                                    onChange={(e) => onValueChange(e)} value={title}
-                                    type="text"
-                                    name="title"
-                                    id="title"
-                                    autoComplete="title"
-                                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                />
-                            </div>
-
-
-                            {/* <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                                <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                                    Department
-                                </label>
-                                <input
-                                    onChange={(e) => onValueChange(e)} value={department}
-                                    type="text"
-                                    name="department"
-                                    id="city"
-                                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                />
-                            </div> */}
                         </div>
                     </div>
                     <div className="px-4 py-3 bg-gray-50 text-right sm:px-6 flex justify-end">
 
                         <button
-                            onClick={() => addUser()}
                             type="submit"
                             className="mr-5 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Save
+                            Salvar
                         </button>
 
                         <button onClick={() => history.push('/')}

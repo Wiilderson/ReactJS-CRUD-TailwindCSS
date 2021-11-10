@@ -1,14 +1,87 @@
 {
-    "users": [
-      {
-      "id": "1",
-      "name": "Jane Cooper",
-      "title": "Regional Paradigm Technician",
-      "department": "Optimization",
-      "role": "Admin",
-      "email": "jane.cooper@example.com",
-      "image":
-        "https://s2.glbimg.com/QqEDyJyWVPTI9tU-5izKpJls6UE=/620x520/smart/e.glbimg.com/og/ed/f/original/2020/11/30/baby-yoda.jpg"
-       }
-    ]
-  }
+  "users": [
+    {
+      "name": "Wild",
+      "email": "wilderson@gmail.com",
+      "role": "Analyst",
+      "id": "bwohHJQ"
+    },
+    {
+      "name": "Marreiro",
+      "email": "marreiro@mail.com",
+      "role": "Venderdo",
+      "id": "vIlvyPW"
+    },
+    {
+      "name": "Macarrao",
+      "email": "macarrao@mail.com",
+      "role": "Comida",
+      "id": "4KbYnEe"
+    },
+    {
+      "name": "wildin",
+      "email": "wildinw@mail.com",
+      "role": "redes",
+      "id": "c7sGYem"
+    },
+    {
+      "name": "Wilderson",
+      "email": "wild@yahoo.com",
+      "role": "Estagiário",
+      "id": "sK_PXbD"
+    },
+    {
+      "name": "Ekko",
+      "email": "ekko@riot.com",
+      "role": "Jungler",
+      "id": "ZrilxIL"
+    },
+    {
+      "name": "Samira",
+      "email": "samira@gmail.com",
+      "role": "ADC",
+      "id": "BQcQaYV"
+    },
+    {
+      "name": "Jinx",
+      "email": "jinx@rito.com",
+      "role": "ADC",
+      "id": "MFT2SzH"
+    },
+    {
+      "name": "Maju",
+      "email": "felina@mail.com",
+      "role": "Gata felina",
+      "id": "-5oqMfp"
+    },
+    {
+      "name": "Maicon",
+      "email": "maicon@mail.com",
+      "role": "Empreendedor",
+      "id": "pRIzkWn"
+    },
+    {
+      "name": "Britney",
+      "email": "brit@mail.com",
+      "role": "cantora",
+      "id": "YxLbpqE"
+    },
+    {
+      "name": "kakaroto",
+      "email": "kakaroto@gmail.com",
+      "role": "sayajin"
+    },
+    {
+      "name": "Testando",
+      "email": "teste@mail.com",
+      "role": "Teste",
+      "id": "jRCXqVn"
+    },
+    {
+      "name": "arrombados",
+      "email": "arrom@arromba.com",
+      "role": "arromabdos",
+      "id": "CA3kTrl"
+    }
+  ]
+}

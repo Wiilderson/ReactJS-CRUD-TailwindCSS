@@ -9,9 +9,6 @@ import ExibindoTabela from './components/tabela';
 
 
 class App extends React.Component {
-
-
-
   render() {
 
     return (
@@ -36,8 +33,6 @@ class App extends React.Component {
 
                   </Switch>
                   {/* <ExibindoTabela dados={teste.pessoas} /> */}
-
-
 
                 </div>
 

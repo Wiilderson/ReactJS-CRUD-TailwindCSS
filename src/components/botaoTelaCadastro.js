@@ -1,6 +1,7 @@
 import React from "react"
 import { useHistory } from "react-router"
-export default function BotaoTelaCadastro(props) {
+
+export default function BotaoTelaCadastro() {
 
     let history = useHistory()
 
