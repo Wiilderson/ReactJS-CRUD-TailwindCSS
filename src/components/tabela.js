@@ -3,7 +3,7 @@ import React from "react";
 import api from "../baseAPI/API";
 import BotaoTelaCadastro from "./botaoTelaCadastro";
 import BotaoAcoes from "./botaoAcoes";
-
+import { Link } from "react-router-dom";
 
 class ExibindoTabela extends React.Component {
 
@@ -89,8 +89,19 @@ class ExibindoTabela extends React.Component {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <BotaoAcoes />
+                  {/* <BotaoAcoes /> */}
+
+                  <Link to={`/components/editarUsers/${props.id}`} className="pr-4 font-medium text-indigo-600 hover:text-green-600">
+                    Editar
+
+                  </Link>
+
+                  <Link to={"/components/cadastro"} className="font-medium text-indigo-600 hover:text-red-600">
+                    Excluir
+
+                  </Link>
                 </td>
+
               </tr>
             ))}
           </tbody>

@@ -1,32 +1,44 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router"
-import API from "../baseAPI/API"
+import { useHistory, useParams } from "react-router"
+import { useState, useEffect } from "react";
+import API from "../baseAPI/API";
 
-export default function CadastroUser() {
-    let history = useHistory()
+export default function EditarUsuario() {
+    let history = useHistory();
+    const { id } = useParams();
     const [user, setUser] = useState({
         name: "",
         email: "",
         role: ""
     });
-
     const { name, role, email } = user;
+
+
+    useEffect(() => {
+        carregarUser();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const onValueChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
         // console.log(user);
     }
 
-    const addUser = async e => {
-        e.preventDefault()
-        await API.post('/users', user)
-        history.push('/')
+    const carregarUser = async () => {
+        const response = await API.get(`/users/${id}`, user)
+        setUser(response.data);
 
     }
+
+    const updateUser = async (e) => {
+        e.preventDefault();
+        await API.put(`/users/${id}`, user)
+        history.push('/')
+    }
+
     return (
 
         <div className="mt-5 md:mt-0 md:col-span-2">
-            <form method="POST" onSubmit={e => addUser(e)}>
+            <form onSubmit={e => updateUser(e)}>
                 <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-gray-50 sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
@@ -92,5 +104,3 @@ export default function CadastroUser() {
     )
 
 }
-// }
-
