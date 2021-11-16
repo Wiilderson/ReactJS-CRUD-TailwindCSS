@@ -1,17 +1,18 @@
+
 import React from "react";
 
 import api from "../baseAPI/API";
 import BotaoTelaCadastro from "./botaoTelaCadastro";
-import BotaoAcoes from "./botaoAcoes";
 import { Link } from "react-router-dom";
 
+
 class ExibindoTabela extends React.Component {
+
 
 
   state = {
     pessoas: []
   }
-
 
   async componentDidMount() {
 
@@ -21,6 +22,11 @@ class ExibindoTabela extends React.Component {
     })
 
   }
+
+  deleteUser = async id => {
+    await api.delete(`/users/${id}`);
+    this.componentDidMount();
+  };
 
 
   render() {
@@ -96,12 +102,20 @@ class ExibindoTabela extends React.Component {
 
                   </Link>
 
-                  <Link to={"/components/cadastro"} className="font-medium text-indigo-600 hover:text-red-600">
+                  {/* <Link to={`/components/modal/${props.id}`}
+                    className="font-medium text-indigo-600 hover:text-red-600">
+
                     Excluir
 
-                  </Link>
-                </td>
+                  </Link> */}
 
+
+                  <button className="font-medium text-indigo-600 hover:text-red-600" onClick={() => this.deleteUser(props.id)}>
+                    Excluir
+                  </button>
+
+
+                </td>
               </tr>
             ))}
           </tbody>

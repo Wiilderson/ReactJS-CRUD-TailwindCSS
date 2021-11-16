@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "name": "Wild",
-      "email": "wilderson@gmail.com",
-      "role": "Analist",
-      "id": "bwohHJQ"
-    },
-    {
       "name": "Marreiro",
       "email": "marreiro@mail.com",
       "role": "Venderdo",
@@ -19,9 +13,9 @@
       "id": "4KbYnEe"
     },
     {
-      "name": "wildin",
+      "name": "wildinhos",
       "email": "wildinw@mail.com",
-      "role": "redes",
+      "role": "Tecnologia",
       "id": "c7sGYem"
     },
     {
@@ -82,6 +76,12 @@
       "email": "Danieiza@gmail.com",
       "role": "Graffiteiro",
       "id": "CA3kTrl"
+    },
+    {
+      "name": "Wilderson Azevedo",
+      "email": "wildersonazevedo@gmail.com",
+      "role": "Estagiario",
+      "id": "69AzE9d"
     }
   ]
 }

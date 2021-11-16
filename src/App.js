@@ -7,6 +7,7 @@ import CadastroUser from "./components/cadastro";
 //import users from "./baseAPI/API";
 import ExibindoTabela from './components/tabela';
 import EditarUsuario from "./components/editarUsers";
+import ModalExcluir from "./components/modal";
 
 
 class App extends React.Component {
@@ -31,8 +32,9 @@ class App extends React.Component {
                   <Switch>
                     <Route path='/components/cadastro' exact component={CadastroUser} />
                     <Route path='/' exact component={ExibindoTabela} />
-                    <Route path='/components/tabela2' exact component={ExibindoTabela} />
                     <Route path="/components/editarUsers/:id" exact component={EditarUsuario} />
+                    <Route path="/components/modal/:id" exact component={ModalExcluir} />
+
 
                   </Switch>
                   {/* <ExibindoTabela dados={teste.pessoas} /> */}
